@@ -1,0 +1,32 @@
+import unittest
+from selenium import webdriver
+import time
+
+
+class MyTestCase(unittest.TestCase):
+    def setUp(self):#打开谷歌浏览器 setUp
+        self.borwser = webdriver.Chrome()
+
+
+    def test_userLogin(self):   #名字前缀必须是test_
+        self.borwser.get("http://localhost:8080/webpageNew/login.php")#打开网址
+        self.borwser.maximize_window() #最大化
+
+        time.sleep(2) #等待两秒
+
+        self.borwser.find_element_by_name("unum").send_keys("1")      #name输入框
+        self.borwser.find_element_by_name("uname").send_keys("admin")
+        self.borwser.find_element_by_name("upwd").send_keys("123456")
+        self.borwser.find_element_by_name("code").send_keys("1234")
+
+        self.borwser.find_element_by_css_selector(".submit_login1").click() #点击登录
+
+        self.borwser.switch_to.alert.accept()#接受弹出框
+
+
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()

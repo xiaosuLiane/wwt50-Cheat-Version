@@ -1,0 +1,35 @@
+Lesson Six TEXT Structured Programming Much time and effor has been dev
+oted to finding the best way to write computer programs. The outcome of
+ that research has give rise to a discipline known as structured progra
+mming, which applies to any language, be it dBASE, BASIC, Pascal, COBOL
+, and so on. The discipline seeks to produce programs that are logicall
+y correct and that can be easily read and maintained by someone other t
+han the original author. A structured program is one which uses only th
+ree types of elementary building blocks to solve a problem. These are s
+equence, selection, and iteration, and they are depicted in Figure 1 (A
+ fourth building block case, is sometimes included in an extended defin
+ition and is also shown.) The fact that these structures are sufficient
+ to express any desired logic was first postulated in a now-classic pap
+er by Bohm and Jacopini. In Figure 1, each buiding block (or structure)
+ is drawn as a flowchart, or pictorial representation of programming lo
+gic. GFlowcharts use special symbols to communicate information. A rect
+angle indicates a decision, and a small circle connects portions of the
+ flowchart. All of the elementtary building blocks have one key  featur
+e in common, namely, a single enteryoint. The sequence structure in Fig
+ure 1a implies that program statements are executed sequentially, that 
+is, one after another. In other words, block A is executed first, and t
+hen block B. The selection structure of Figure 1b shows a conditional s
+tatement, which provides a choice between two actions. If the condition
+ is true. block A is executed; if it is false, block B is executed. The
+ condition is a single entry point to the structure and both paths meet
+ in a single exit point. The iteration (or loopint) structure in Figure
+ 1c calls for the repeated execution of one or more statments. A condit
+ion is    tested and, if it is true, block A is executed. If, however, 
+the condition is false, control passes to the next sequential statement
+ after the iteration structure. Agin, there is exactly one entry and on
+e exit point from the structure. The case (or multibranch) structure in
+ Figure 1d is an extension of selection, as it pressents a choice betwe
+en more than two statements, only one of which can be true. A condition
+ is evaluated and a branch to one of several paths is taken, depending 
+on the value of the condition. As with the other fundamenteral building
+ blocks, there is one entry point and one exit point.

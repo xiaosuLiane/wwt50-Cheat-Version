@@ -1,0 +1,47 @@
+Lesson Three TEXT Compoents of a Computer System Now that you have some
+ idea of what microcomputers can do, we can begin the discussion of how 
+thdy do it. The idea of a general-purpose machine to solve mathematical 
+problems was first proposed over 150 years go by a farsighted individua
+l named Charles Babbage. The device Babbage proposed to build consisted
+ of four components that uncannily reseble a modern computer: The store
+ to hold data and the results of calculations: Babbage designed the sto
+ree to contain 1000 numbers of 50 digits each. The mill to perform the 
+mathematical operations. Gears and levers to transfer data back and for
+th between the store and the mill. An input/output unit to read externa
+l data into the store and display results of calcuations produced by th
+e mill. Babbage's machine (named the Analytical Engine and subsequently
+ modified into a more ambitious Difference Engine) would, had it been c
+ompleted, it would have been the first general-purpose computer. Unfort
+unately, the technology of the day was incapable of producing the mecha
+nical comonets to have lost 17, 000 pounds of his own money (and an equ
+al amount of government funding). His critics wrote that "the governmen
+t received nothing for its money and should at least have gotten a clev
+er toy." As with so many other geniuses who were ahead of their time, B
+abbage was proved correct nearly a century after his death, since all m
+odern computers are desingned along the lines he laid out. A computer a
+ccepts data from an external source (input), stores it temporarily in m
+emory while calculating an answer (processing), and pressents the resul
+ts (output). Thus the computer itself is only one element of the total 
+picture, as can be seen from Figure 1, which depicts the essential hard
+ware compoents of computer system. These components and their relations
+ hip to one another are found in all computer systems, from the latest 
+technological marvel. Consider: Central processing unit (CPU) performs 
+the actual calculations and consists of control unit and arithmetic-lo
+gic unit. The components of the CPU are more fully described in the nex
+t section. Main memory also known as primary memory or random-access me
+mory (RAM) temporarily store any program executed by the computer as we
+ll as the data on which the program operates. Main memories are designe
+d for high-speed, short-term (temporary) access to data as opposed to a
+uxiliary storage, which provides permanent (albeit slower) access. Auxi
+liary storage (also called secondary storage or external storage) provi
+des a place where data can be permanently stored, and from where it can
+ be transferred to and from main memory. Floppy disks with storage capa
+cities of up to 1.44 million characters and hard (fixed) disks with cap
+acities of 10 to 100 million characters are examples of auxiliary stora
+ge used with personal computers. Input devices accept data from an exte
+rnal source and convert to electric signals which are sent to the CPU. 
+The keyboard, mouse, and joystick are common input devices used with mi
+crocomputers. Output devices accept electric signals from the CPU and c
+onvert them to a form suitable for output. Printers and monitors are th
+e most common type of output devices used with microcomputers. Pringers
+ provide permanent record (hard copy) of computer output.

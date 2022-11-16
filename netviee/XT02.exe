@@ -1,0 +1,73 @@
+import unittest
+from selenium import webdriver
+import time
+
+class MyTestCase(unittest.TestCase):
+    def setUp(self):#打开谷歌浏览器 setUp
+        self.borwser = webdriver.Chrome()
+
+
+		
+    def test_userLogin (self):   #名字前缀必须是test_
+        self.borwser.get("http://localhost:8080/webpageNew/login.php")
+        self.borwser.maximize_window() #最大化
+
+        time.sleep(2) #等待两秒
+
+        self.borwser.find_element_by_name("unum").send_keys("1")
+        self.borwser.find_element_by_name("uname").send_keys("admin")
+        self.borwser.find_element_by_name("upwd").send_keys("123456")
+        self.borwser.find_element_by_name("code").send_keys("1234")
+
+        self.borwser.find_element_by_xpath("/html/body/form/div[3]/div[2]/div[1]/input").click()  #点击登录
+        self.borwser.switch_to.alert.accept()#接受弹出框
+
+    def test_zclbAdd (self):#新增
+        self.test_userLogin() #先登录系统
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[1]/div[2]/a").click() #点击资产类别
+        time.sleep(2)  # 等待两秒
+        # XP点击新增
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/form/div/div[2]/div[2]/a/div/input").click()
+        #name输入框
+        self.borwser.find_element_by_name("ClassNo").send_keys("ZCLB000")
+        self.borwser.find_element_by_name("ClassName").send_keys("固定资产000")
+        self.borwser.find_element_by_name("Remark").send_keys("固定资产000")
+        # XP点击确定
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/form/div/input").click()
+        # 接受弹出框
+        self.borwser.switch_to.alert.accept()
+
+
+
+    def test_zclbxg(self): #修改
+        self.test_userLogin()  # 先登录系统
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[1]/div[2]/a").click()  # 点击资产类别
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/form/div/div[2]/div[3]/table/tbody/tr[2]/td[4]/a[1]").click()  # 点击修改
+        time.sleep(2)  # 等待两秒
+        self.borwser.find_element_by_name("ClassNo").clear() # 清空数据
+        self.borwser.find_element_by_name("ClassNo").send_keys("ZCLB000ppp")
+        self.borwser.find_element_by_name("ClassName").clear() # 清空数据
+        self.borwser.find_element_by_name("ClassName").send_keys("固定资产000ppp")
+        self.borwser.find_element_by_name("Remark").clear()  # 清空数据
+        time.sleep(2)  # 等待两秒
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/form/div/input").click()  # 点击确定按钮
+        self.borwser.switch_to.alert.accept()  # 接受弹出框
+
+
+
+
+    def test_zclbsc(self): #删除
+        self.test_userLogin()  # 先登录系统
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[1]/div[2]/a").click()  # 点击资产类别
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/form/div/div[2]/div[3]/table/tbody/tr[2]/td[4]/a[2]").click()  # 点击删除
+        self.borwser.switch_to.alert.accept()  # 接受弹出框
+        time.sleep(2)  # 等待两秒
+        self.borwser.switch_to.alert.accept()  # 接受弹出框
+
+
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()

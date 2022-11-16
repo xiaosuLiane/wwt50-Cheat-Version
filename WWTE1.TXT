@@ -1,0 +1,40 @@
+Lesson One TEXT What is a Computer A computer is a machine that  takes
+in informaiton and processes that data in some way. The data may be nu
+mber, letters, pictures, or even sounds.  The computer can perform ari
+thmetcial operations, for example, addition, subtraction, multiplicati
+on, division and power. All higher mathematical problems are reduced t
+o thesesimple operations before being solved. The computer can compare
+ statements. After a comptuer tests two statements, it can make a deci
+sion about which statement is true. Thsi basic ability has made possib
+le many of the successful applications of computers today. The compute
+r are programmable. Programs are written to give istructions to the co
+mputer. Some of programs used to operate the computer are stored insid
+e the computer. People who operate the computer never see the actual p
+rogramming. Other programs are written by students and professional pr
+ogrammers. Most of the computers used today  are digital computers, fr
+om small home computer systems to the large systems that the governmen
+t uses to handle data about the entire nation. A computer is a data pr
+ocessing machine. Data flow into the machine as input. Information flo
+ws from the machine as output. The compjuter processes the data. What 
+do we mean when we say that a computer processes data? We processiron 
+ore to make steel; we process wood pulp to make paper. 'Process' impli
+es that a change takes place, that the raw materals are in some way re
+structured or manipulated. Often, data processing involves filtering a
+nd summarizing data so that underlying patterns can be perceived. How 
+does a computer process its data? What functions, what operations, can
+ it perform? Generally, computers can add, substact, multiply, divide,
+ compare, copy, request input, and request output. So can most pocket 
+calculators.
+Lesson One TEXT What is a Computer A computer is a machine that  takes
+in informaiton and processes that data in some way. The data may be nu
+mber, letters, pictures, or even sounds.  The computer can perform ari
+thmetcial operations, for example, addition, subtraction, multiplication,
+division and power. All higher mathematical problems are reduced t
+o thesesimple operations before being solved. The computer can compare
+ statements. After a comptuer tests two statements, it can make a deci
+sion about which statement is true. Thsi basic ability has made possib
+le many of the successful applications of computers today. The compute
+r are programmable. Programs are written to give istructions to the co
+mputer. Some of programs used to operate the computer are stored insid
+e the computer. People who operate the computer never see the actual p
+rogramming.

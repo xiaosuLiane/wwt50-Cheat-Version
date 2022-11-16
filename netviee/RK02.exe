@@ -1,0 +1,72 @@
+import unittest
+from selenium import webdriver
+import time
+from selenium.webdriver.support.select import Select # 下拉框
+
+
+class MyTestCase(unittest.TestCase):
+    def setUp(self):#打开谷歌浏览器 setUp
+        self.borwser = webdriver.Chrome()
+
+
+    def test_userLogin(self):   #名字前缀必须是test_
+        self.borwser.get("http://localhost:8080/webpageNew/login.php")          #打开网址
+        self.borwser.maximize_window() #最大化
+
+        time.sleep(2) #等待两秒
+
+        self.borwser.find_element_by_name("unum").send_keys("1")
+        self.borwser.find_element_by_name("uname").send_keys("admin")
+        self.borwser.find_element_by_name("upwd").send_keys("123456")
+        self.borwser.find_element_by_name("code").send_keys("1234")
+
+        self.borwser.find_element_by_css_selector(".submit_login1").click() #点击登录
+
+        self.borwser.switch_to.alert.accept()#接受弹出框
+
+    def test_zclbAdd (self):#新增
+        self.test_userLogin() #先登录系统
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[1]/div[7]/a").click() #点击资产入库
+        time.sleep(2)  # 等待两秒
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/form/div/div[2]/div[2]/a[4]/div/input").click()#点击新增
+        Select(self.borwser.find_elements_by_css_selector(".select_gry_xinjian")[0]).select_by_index(1)  # 选择资产类别
+        Select(self.borwser.find_elements_by_css_selector(".select_gry_xinjian")[1]).select_by_index(1)  # 选择资产类别
+        Select(self.borwser.find_elements_by_css_selector(".select_gry_xinjian")[2]).select_by_index(1)  # 选择资产类别
+        Select(self.borwser.find_elements_by_css_selector(".select_gry_xinjian")[3]).select_by_index(1)  # 选择资产类别
+        self.borwser.find_elements_by_css_selector(".input1")[1].send_keys("三生三世")                    #CSS选择第二个资产名称，输入内容
+        self.borwser.find_element_by_css_selector(".input_height1").send_keys("世三生三世三生三世三生三三生三世三生三世三生三世")               #CSS选择备注，输入内容
+        # 日期
+        js = "$('.Wdate').val('2020-12-12')"
+        self.borwser.execute_script(js)
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/form/div/input").click()     #XP点击
+        self.borwser.switch_to.alert.accept()  # 接受弹出框
+
+
+
+
+
+    def test_zclbxg(self):  # 修改
+        self.test_userLogin()  # 先登录系统
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[1]/div[7]/a").click()  # 点击资产入库
+        time.sleep(2)  # 等待两秒
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/form/div/div[2]/div[3]/table/tbody/tr[2]/td[8]/a[1]").click()  # 点击修改
+        Select(self.borwser.find_elements_by_css_selector(".select_gry_xinjian")[0]).select_by_index(1)  # 选择资产类别
+        Select(self.borwser.find_elements_by_css_selector(".select_gry_xinjian")[1]).select_by_index(1)  # 选择资产类别
+        Select(self.borwser.find_elements_by_css_selector(".select_gry_xinjian")[2]).select_by_index(1)  # 选择资产类别
+        Select(self.borwser.find_elements_by_css_selector(".select_gry_xinjian")[3]).select_by_index(1)  # 选择资产类别
+        self.borwser.find_elements_by_css_selector(".input1")[1].clear()  #clear() 清空数据
+        self.borwser.find_elements_by_css_selector(".input1")[1].send_keys("三世1")  # CSS选择第二个资产名称，输入内容
+        self.borwser.find_element_by_css_selector(".input_height1").clear()     #clear() 清空数据
+        self.borwser.find_element_by_css_selector(".input_height1").send_keys("生三23")  # CSS选择备注，输入内容
+        time.sleep(5)  # 等待两秒
+        # 日期
+        js = "$('.Wdate').val('2020-12-12')"
+        self.borwser.execute_script(js)
+        self.borwser.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/form/div/input").click()  # XP点击
+        self.borwser.switch_to.alert.accept()  # 接受弹出框
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()

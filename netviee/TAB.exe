@@ -1,0 +1,67 @@
+import unittest
+# 导入selenium包
+from selenium import webdriver
+# 导入Select模块（下拉框）
+from selenium.webdriver.support.select import Select
+# 导入Keys模块（键盘）
+from selenium.webdriver.common.keys import Keys
+# 执行动作链
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+# 下拉框
+from selenium.webdriver.support.select import Select
+
+
+
+class MyTestCase(unittest.TestCase):
+    def setUp(self):
+        # 打开谷歌浏览器
+        self.browser = webdriver.Chrome()
+
+    def test_login(self):
+        self.browser.get("http://localhost:8080/webpage/login.php")
+        # 使用actionChains和tab进行切换登录
+        action = ActionChains(self.browser)
+        action.send_keys(Keys.TAB).\
+            send_keys("1").\
+            send_keys(Keys.TAB).\
+            send_keys("admin").\
+            send_keys(Keys.TAB).\
+            send_keys("123456").\
+            send_keys(Keys.TAB).\
+            send_keys("9999").\
+            send_keys(Keys.TAB * 2).\
+            send_keys(Keys.ENTER).perform()
+
+
+        time.sleep(1)
+        # 消息框自动确定
+        self.browser.switch_to.alert.accept()
+        time.sleep(1)
+        self.browser.find_element_by_link_text("资产入库").click()  # 根据链接名字，点击链接
+        self.browser.find_elements_by_class_name("button_ture")[3].click()
+
+        self.browser.find_element_by_name("AssetName").send_keys("东月")
+
+        # 下拉框
+        Select(self.browser.find_element_by_name("ClassNo")).select_by_index("3")
+        Select(self.browser.find_element_by_name("AddrsNo")).select_by_index("1")
+        Select(self.browser.find_element_by_name("ProvidNo")).select_by_index("1")
+        Select(self.browser.find_element_by_name("DepartNo")).select_by_index("2")
+
+        # 时间
+        js = "$('input[name=RecordedDate]').val('2020-12-3')"
+        self.browser.execute_script(js)
+        time.sleep(1)
+        #         备注
+        self.browser.find_element_by_name("Remark").send_keys("测试资产入库内容")
+        self.browser.find_element_by_name("Remark").send_keys(Keys.CONTROL, 'a')
+        self.browser.find_element_by_name("Remark").send_keys(Keys.CONTROL, 'c')
+        self.browser.find_element_by_name("Remark").send_keys(Keys.CONTROL, 'v'*3)
+        self.browser.find_element_by_xpath("/ html / body / div[2] / div / div[2] / div[2] / div[1] / form / div / input").click()
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()
